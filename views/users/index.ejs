@@ -1,0 +1,32 @@
+<h2>Users Table</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Zip Code</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user=>{ %>
+            <tr>
+                <td><a href="<%= `/users/${user._id}` %>">
+                    <%= user.firstName %>
+                    </a>
+                </td>
+                <td><%= user.lastName %></td>
+                <td><%= user.zipCode %></td>
+                <td><%= user.email %></td>
+                <td><a href="users/<%=user._id %>/edit">Edit</a></td>
+                <td>
+                    <a href="<%= `users/${user._id}/delete?_method=DELETE` %>" 
+                        onclick="return confirm('Are you sure you want to delete this record?')">
+                    Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+<div class="data-form">
+    <form action="/courses/create" method="POST">
+        <h2>Create a new course</h2>
+
+        <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input type="text" name="title" id="inputTitle" placeholder="Title" autofocus required>
+        </div>
+        
+        <div class="form-group">
+            <label for="inputItems">Items</label>
+            <input type="text" name="items" id="inputItems" placeholder="e.g. apple cherry">
+        </div>
+        
+        <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <input type="text" name="description" id="inputDescription" placeholder="Description" required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputZipCode">Zip Code</label>
+            <input type="text" name="zipCode" id="inputZipCode" placeholder="Zip Code" pattern="\d*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPrice">Price</label>
+            <input type="text" name="price" id="inputPrice" placeholder="&euro;" pattern="\d*" required>
+        </div>
+
+        <button type="submit">Create</button>
+    </form>
+</div>

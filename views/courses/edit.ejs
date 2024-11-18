@@ -1,0 +1,44 @@
+<div class="data-form"></div>
+    <form method="POST" action="/courses/<%= course._id %>/update?_method=PUT">
+        <h2>Edit course</h2>
+
+        <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="text" name="title" id="inputTitle" value="<%= `${course.title}` %>"
+         placeholder="Title" autofocus required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputItems">Items</label>
+            <input type="text" name="items" id="inputItems" 
+            <% 
+                let str="";
+                course.items.forEach(item => {
+                    str=str+item+" ";
+                });
+            %>
+            value="<%= str %>" placeholder="e.g. apple cherry">
+        </div>
+
+        <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <input type="text" name="description" id="inputDescription"  value="<%= `${course.description}` %>"
+            placeholder="Description" required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputZipCode">Zip Code</label>
+            <input type="text" name="zipCode" id="inputZipCode"  value="<%= `${course.zipCode}` %>"
+            placeholder="Zip Code" pattern="\d*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPrice">Price</label>
+            <input type="number" name="price" id="inputPrice" value="<%= `${course.price}` %>">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>

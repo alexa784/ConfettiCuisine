@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+        <h2 class="center">Subscribers Table</h2>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Zip Code</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% subscribers.forEach(subscriber=>{ %>
+            <tr>
+                <td>
+                    <a href="<%= `/subscribers/${subscriber._id}` %>">
+                        <%= subscriber.firstName %>
+                    </a>
+                </td>
+                <td><%= subscriber.lastName %></td>
+                <td><%= subscriber.zipCode %></td>
+                <td><%= subscriber.email %></td>
+                <td>
+                    <a href="<%= `/subscribers/${subscriber._id}/edit` %>">Edit</a>
+                </td>
+                <td>
+                    <a href="<%= `/subscribers/${subscriber._id}/delete?_method=DELETE` %>"
+                        onclick="return confirm('Are you sure to delete this record?')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
