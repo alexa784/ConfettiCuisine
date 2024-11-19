@@ -10,6 +10,8 @@ const connectFlash=require("connect-flash");                // for sessions and 
 const passport=require("passport");                         // for hashing users passwords and authentication of users
 const expressValidator=require("express-validator");        // for checking whatever forms data is in corressponding format
 const userModel=require("./model/user.js");
+const dotenv = require('dotenv');                           // for reading enviroment variables
+dotenv.config();
 
 // create App
 const app=express();
