@@ -34,10 +34,10 @@ module.exports=(io)=>{
             client.broadcast.emit("set-user-joined-chat",data);
         });
         MessageModel.find({})
-        .sort({time: "ascending"})
-        .limit(10).then(messages=>{
+        .sort({time: "descending"})
+        .limit(50).then(messages=>{
             console.log("server posalji klijentu load-all-messages()");
-            client.emit("load all messages",messages);
+            client.emit("load all messages",messages.reverse());
         })
     })
 }
